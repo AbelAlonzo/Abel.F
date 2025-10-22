@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - MenStyle360</title>
+    <title>Sign In - MenStyle360</title>
     <link rel="stylesheet" href="auth-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,7 +25,7 @@
                     <i class="fas fa-user-circle"></i>
                     <h1>MenStyle<span class="logo-accent">360</span></h1>
                 </div>
-                <p class="tagline">Tu estilo, tu confianza</p>
+                <p class="tagline">Your style, your confidence</p>
             </div>
 
             <!-- Auth Card -->
@@ -34,33 +34,33 @@
                 <div class="auth-tabs">
                     <button class="tab-btn active" data-tab="login">
                         <i class="fas fa-sign-in-alt"></i>
-                        Iniciar Sesión
+                        Sign In
                     </button>
                     <button class="tab-btn" data-tab="register">
                         <i class="fas fa-user-plus"></i>
-                        Registrarse
+                        Sign Up
                     </button>
                 </div>
 
                 <!-- Login Form -->
                 <div class="auth-form active" id="login-form">
                     <div class="form-header">
-                        <h2>¡Bienvenido de vuelta!</h2>
-                        <p>Inicia sesión para continuar tu experiencia de estilo</p>
+                        <h2>Welcome back!</h2>
+                        <p>Sign in to continue your style experience</p>
                     </div>
 
                     <form id="loginForm" class="form">
                         <div class="input-group">
                             <div class="input-wrapper">
                                 <i class="fas fa-envelope input-icon"></i>
-                                <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
+                                <input type="email" id="loginEmail" placeholder="Email" required>
                             </div>
                         </div>
 
                         <div class="input-group">
                             <div class="input-wrapper">
                                 <i class="fas fa-lock input-icon"></i>
-                                <input type="password" id="loginPassword" placeholder="Contraseña" required>
+                                <input type="password" id="loginPassword" placeholder="Password" required>
                                 <button type="button" class="password-toggle" onclick="togglePassword('loginPassword')">
                                     <i class="fas fa-eye"></i>
                                 </button>
@@ -71,13 +71,13 @@
                             <label class="checkbox-wrapper">
                                 <input type="checkbox" id="rememberMe">
                                 <span class="checkmark"></span>
-                                Recordarme
+                                Remember me
                             </label>
-                            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                            <a href="#" class="forgot-password">Forgot your password?</a>
                         </div>
 
                         <button type="submit" class="auth-btn primary">
-                            <span class="btn-text">Iniciar Sesión</span>
+                            <span class="btn-text">Sign In</span>
                             <i class="fas fa-arrow-right btn-icon"></i>
                         </button>
                     </form>
@@ -85,7 +85,7 @@
                     <!-- Social Login -->
                     <div class="social-login">
                         <div class="divider">
-                            <span>o continúa con</span>
+                            <span>or continue with</span>
                         </div>
                         <div class="social-buttons">
                             <button class="social-btn google" disabled>
@@ -103,29 +103,29 @@
                 <!-- Register Form -->
                 <div class="auth-form" id="register-form">
                     <div class="form-header">
-                        <h2>¡Únete a MenStyle360!</h2>
-                        <p>Crea tu cuenta y descubre tu estilo perfecto</p>
+                        <h2>Join MenStyle360!</h2>
+                        <p>Create your account and discover your perfect style</p>
                     </div>
 
                     <form id="registerForm" class="form">
                         <div class="input-group">
                             <div class="input-wrapper">
                                 <i class="fas fa-user input-icon"></i>
-                                <input type="text" id="registerName" placeholder="Nombre completo" required>
+                                <input type="text" id="registerName" placeholder="Full name" required>
                             </div>
                         </div>
 
                         <div class="input-group">
                             <div class="input-wrapper">
                                 <i class="fas fa-envelope input-icon"></i>
-                                <input type="email" id="registerEmail" placeholder="Correo electrónico" required>
+                                <input type="email" id="registerEmail" placeholder="Email" required>
                             </div>
                         </div>
 
                         <div class="input-group">
                             <div class="input-wrapper">
                                 <i class="fas fa-lock input-icon"></i>
-                                <input type="password" id="registerPassword" placeholder="Contraseña" required>
+                                <input type="password" id="registerPassword" placeholder="Password" required>
                                 <button type="button" class="password-toggle" onclick="togglePassword('registerPassword')">
                                     <i class="fas fa-eye"></i>
                                 </button>
@@ -135,7 +135,7 @@
                         <div class="input-group">
                             <div class="input-wrapper">
                                 <i class="fas fa-lock input-icon"></i>
-                                <input type="password" id="confirmPassword" placeholder="Confirmar contraseña" required>
+                                <input type="password" id="confirmPassword" placeholder="Confirm password" required>
                                 <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
                                     <i class="fas fa-eye"></i>
                                 </button>
@@ -146,12 +146,12 @@
                             <label class="checkbox-wrapper">
                                 <input type="checkbox" id="agreeTerms" required>
                                 <span class="checkmark"></span>
-                                Acepto los <a href="#" class="terms-link">términos y condiciones</a>
+                                I accept the <a href="#" class="terms-link">terms and conditions</a>
                             </label>
                         </div>
 
                         <button type="submit" class="auth-btn primary">
-                            <span class="btn-text">Crear Cuenta</span>
+                            <span class="btn-text">Create Account</span>
                             <i class="fas fa-arrow-right btn-icon"></i>
                         </button>
                     </form>
@@ -159,7 +159,7 @@
                     <!-- Social Register -->
                     <div class="social-login">
                         <div class="divider">
-                            <span>o regístrate con</span>
+                            <span>or sign up with</span>
                         </div>
                         <div class="social-buttons">
                             <button class="social-btn google" disabled>
@@ -179,7 +179,7 @@
             <div class="back-home">
                 <a href="index.html" class="back-link">
                     <i class="fas fa-arrow-left"></i>
-                    Volver al inicio
+                    Back to home
                 </a>
             </div>
         </div>
@@ -188,7 +188,7 @@
         <div class="loading-overlay" id="loadingOverlay">
             <div class="loading-spinner">
                 <div class="spinner"></div>
-                <p>Procesando...</p>
+                <p>Processing...</p>
             </div>
         </div>
 
