@@ -8,157 +8,157 @@ let carouselIndex = 0;
 // Datos del quiz ampliado
 const quizData = [
     {
-        question: "¿Cuál es tu tipo de rostro?",
+        question: "What is your face type?",
         options: [
-            { value: "oval", text: "Ovalado" },
-            { value: "square", text: "Cuadrado" },
-            { value: "round", text: "Redondo" },
-            { value: "heart", text: "Corazón" },
-            { value: "diamond", text: "Diamante" },
-            { value: "oblong", text: "Alargado" },
+            { value: "oval", text: "Oval" },
+            { value: "square", text: "Square" },
+            { value: "round", text: "Round" },
+            { value: "heart", text: "Heart" },
+            { value: "diamond", text: "Diamond" },
+            { value: "oblong", text: "Oblong" },
             { value: "triangle", text: "Triangular" },
-            { value: "pear", text: "Pera" }
+            { value: "pear", text: "Pear" }
         ]
     },
     {
-        question: "¿Cuál es tu tipo de cabello?",
+        question: "What is your hair type?",
         options: [
-            { value: "straight", text: "Liso" },
-            { value: "curly", text: "Rizado" },
-            { value: "wavy", text: "Ondulado" },
-            { value: "thick", text: "Grueso" },
-            { value: "fine", text: "Fino" },
-            { value: "oily", text: "Graso" },
-            { value: "dry", text: "Seco" },
-            { value: "mixed", text: "Mixto" }
+            { value: "straight", text: "Straight" },
+            { value: "curly", text: "Curly" },
+            { value: "wavy", text: "Wavy" },
+            { value: "thick", text: "Thick" },
+            { value: "fine", text: "Fine" },
+            { value: "oily", text: "Oily" },
+            { value: "dry", text: "Dry" },
+            { value: "mixed", text: "Mixed" }
         ]
     },
     {
-        question: "¿Cuál es tu tono de piel?",
+        question: "What is your skin tone?",
         options: [
-            { value: "light", text: "Clara" },
-            { value: "medium", text: "Media" },
-            { value: "dark", text: "Oscura" },
-            { value: "olive", text: "Aceitunada" }
+            { value: "light", text: "Light" },
+            { value: "medium", text: "Medium" },
+            { value: "dark", text: "Dark" },
+            { value: "olive", text: "Olive" }
         ]
     },
     {
-        question: "¿Qué estilo prefieres?",
+        question: "What style do you prefer?",
         options: [
             { value: "casual", text: "Casual" },
             { value: "formal", text: "Formal" },
             { value: "streetwear", text: "Streetwear" },
-            { value: "minimalist", text: "Minimalista" },
+            { value: "minimalist", text: "Minimalist" },
             { value: "vintage", text: "Vintage" },
-            { value: "sporty", text: "Deportivo" }
+            { value: "sporty", text: "Sporty" }
         ]
     },
     {
-        question: "¿Cuál es tu edad?",
+        question: "What is your age?",
         options: [
-            { value: "18-25", text: "18-25 años" },
-            { value: "26-35", text: "26-35 años" },
-            { value: "36-45", text: "36-45 años" },
-            { value: "45+", text: "45+ años" }
+            { value: "18-25", text: "18-25 years" },
+            { value: "26-35", text: "26-35 years" },
+            { value: "36-45", text: "36-45 years" },
+            { value: "45+", text: "45+ years" }
         ]
     },
     {
-        question: "¿Qué tipo de barba prefieres?",
+        question: "What type of beard do you prefer?",
         options: [
-            { value: "clean", text: "Sin barba" },
-            { value: "stubble", text: "Barba de 3 días" },
-            { value: "short", text: "Barba corta" },
-            { value: "medium", text: "Barba media" },
-            { value: "long", text: "Barba larga" },
-            { value: "goatee", text: "Candado" },
-            { value: "mustache", text: "Solo bigote" }
+            { value: "clean", text: "Clean shaven" },
+            { value: "stubble", text: "3-day stubble" },
+            { value: "short", text: "Short beard" },
+            { value: "medium", text: "Medium beard" },
+            { value: "long", text: "Long beard" },
+            { value: "goatee", text: "Goatee" },
+            { value: "mustache", text: "Mustache only" }
         ]
     },
     {
-        question: "¿Cuál es tu personalidad?",
+        question: "What is your personality?",
         options: [
-            { value: "confident", text: "Seguro" },
-            { value: "creative", text: "Creativo" },
-            { value: "professional", text: "Profesional" },
-            { value: "adventurous", text: "Aventurero" },
-            { value: "calm", text: "Tranquilo" },
-            { value: "energetic", text: "Energético" }
+            { value: "confident", text: "Confident" },
+            { value: "creative", text: "Creative" },
+            { value: "professional", text: "Professional" },
+            { value: "adventurous", text: "Adventurous" },
+            { value: "calm", text: "Calm" },
+            { value: "energetic", text: "Energetic" }
         ]
     },
     {
-        question: "¿Qué colores te gustan más?",
+        question: "What colors do you like most?",
         options: [
-            { value: "neutrals", text: "Neutros" },
-            { value: "dark", text: "Oscuros" },
-            { value: "bright", text: "Vibrantes" },
-            { value: "pastels", text: "Pasteles" },
-            { value: "earth", text: "Tierras" },
-            { value: "cool", text: "Fríos" }
+            { value: "neutrals", text: "Neutrals" },
+            { value: "dark", text: "Dark" },
+            { value: "bright", text: "Bright" },
+            { value: "pastels", text: "Pastels" },
+            { value: "earth", text: "Earth tones" },
+            { value: "cool", text: "Cool tones" }
         ]
     }
 ];
 
-// Resultados del quiz ampliado
+// Quiz results
 const quizResults = {
     "oval-straight-light-casual-18-25-clean-confident-neutrals": {
-        title: "Estilo Joven y Moderno",
-        description: "Tu estilo ideal combina frescura juvenil con elegancia moderna. Te favorecen los cortes limpios y los colores suaves.",
-        score: "85% Moderno",
+        title: "Young and Modern Style",
+        description: "Your ideal style combines youthful freshness with modern elegance. Clean cuts and soft colors suit you.",
+        score: "85% Modern",
         traits: [
-            { icon: "✨", name: "Fresco" },
-            { icon: "🎯", name: "Preciso" },
-            { icon: "💫", name: "Elegante" },
+            { icon: "✨", name: "Fresh" },
+            { icon: "🎯", name: "Precise" },
+            { icon: "💫", name: "Elegant" },
             { icon: "🔥", name: "Trendy" }
         ],
-        hair: ["Corte fade con volumen superior", "Undercut moderno", "Pompadour suave"],
-        beard: ["Sin barba o barba de 3 días", "Líneas limpias y definidas"],
+        hair: ["Fade cut with top volume", "Modern undercut", "Soft pompadour"],
+        beard: ["Clean shaven or 3-day stubble", "Clean and defined lines"],
         colors: ["#1E1E1E", "#4B5563", "#2E4A62", "#F5F5F3", "#7A7265"],
-        fashion: ["Ropa casual con toques minimalistas", "Jeans slim fit", "Camisetas básicas de calidad", "Sneakers blancos"]
+        fashion: ["Casual clothing with minimalist touches", "Slim fit jeans", "Quality basic t-shirts", "White sneakers"]
     },
     "square-curly-medium-formal-26-35-medium-professional-dark": {
-        title: "Estilo Profesional y Sofisticado",
-        description: "Tu estilo ideal es elegante y profesional, perfecto para el entorno laboral y ocasiones especiales.",
-        score: "92% Profesional",
+        title: "Professional and Sophisticated Style",
+        description: "Your ideal style is elegant and professional, perfect for the workplace and special occasions.",
+        score: "92% Professional",
         traits: [
-            { icon: "💼", name: "Profesional" },
-            { icon: "👔", name: "Elegante" },
-            { icon: "🎖️", name: "Confiable" },
-            { icon: "⭐", name: "Distinguido" }
+            { icon: "💼", name: "Professional" },
+            { icon: "👔", name: "Elegant" },
+            { icon: "🎖️", name: "Reliable" },
+            { icon: "⭐", name: "Distinguished" }
         ],
-        hair: ["Corte clásico con textura", "Raya lateral", "Quiff profesional"],
-        beard: ["Barba media bien definida", "Líneas precisas", "Mantenimiento regular"],
+        hair: ["Classic textured cut", "Side part", "Professional quiff"],
+        beard: ["Well-defined medium beard", "Precise lines", "Regular maintenance"],
         colors: ["#1E1E1E", "#4B5563", "#2E4A62", "#7A7265", "#C9D1D3"],
-        fashion: ["Trajes bien cortados", "Camisas de vestir", "Corbatas de seda", "Zapatos de cuero"]
+        fashion: ["Well-tailored suits", "Dress shirts", "Silk ties", "Leather shoes"]
     },
     "round-wavy-dark-streetwear-18-25-stubble-adventurous-bright": {
-        title: "Estilo Urbano y Dinámico",
-        description: "Tu estilo ideal es moderno, urbano y lleno de personalidad. Te gusta destacar con looks únicos.",
-        score: "88% Urbano",
+        title: "Urban and Dynamic Style",
+        description: "Your ideal style is modern, urban and full of personality. You like to stand out with unique looks.",
+        score: "88% Urban",
         traits: [
-            { icon: "🚀", name: "Dinámico" },
-            { icon: "🎨", name: "Creativo" },
-            { icon: "⚡", name: "Energético" },
-            { icon: "🌟", name: "Único" }
+            { icon: "🚀", name: "Dynamic" },
+            { icon: "🎨", name: "Creative" },
+            { icon: "⚡", name: "Energetic" },
+            { icon: "🌟", name: "Unique" }
         ],
-        hair: ["Corte asimétrico", "Undercut con diseño", "Fade con patrones"],
-        beard: ["Barba de 3 días", "Estilo desenfadado", "Líneas naturales"],
+        hair: ["Asymmetric cut", "Designed undercut", "Patterned fade"],
+        beard: ["3-day stubble", "Relaxed style", "Natural lines"],
         colors: ["#2E4A62", "#7A7265", "#4B5563", "#D9CAB3", "#1E1E1E"],
-        fashion: ["Ropa streetwear", "Hoodies oversize", "Joggers", "Sneakers llamativos"]
+        fashion: ["Streetwear clothing", "Oversized hoodies", "Joggers", "Bold sneakers"]
     },
     "heart-thick-light-minimalist-26-35-clean-calm-pastels": {
-        title: "Estilo Minimalista y Refinado",
-        description: "Tu estilo ideal es limpio, minimalista y atemporal. Prefieres la calidad sobre la cantidad.",
-        score: "90% Minimalista",
+        title: "Minimalist and Refined Style",
+        description: "Your ideal style is clean, minimalist and timeless. You prefer quality over quantity.",
+        score: "90% Minimalist",
         traits: [
-            { icon: "🧘", name: "Tranquilo" },
-            { icon: "🎯", name: "Focalizado" },
-            { icon: "✨", name: "Refinado" },
+            { icon: "🧘", name: "Calm" },
+            { icon: "🎯", name: "Focused" },
+            { icon: "✨", name: "Refined" },
             { icon: "🌿", name: "Natural" }
         ],
-        hair: ["Corte simple y limpio", "Fade sutil", "Estilo natural"],
-        beard: ["Sin barba", "Líneas muy limpias", "Afeitado perfecto"],
+        hair: ["Simple and clean cut", "Subtle fade", "Natural style"],
+        beard: ["Clean shaven", "Very clean lines", "Perfect shave"],
         colors: ["#F5F5F3", "#C9D1D3", "#7A7265", "#4B5563", "#1E1E1E"],
-        fashion: ["Ropa de corte perfecto", "Colores neutros", "Materiales naturales", "Accesorios funcionales"]
+        fashion: ["Perfectly cut clothing", "Neutral colors", "Natural materials", "Functional accessories"]
     }
 };
 
@@ -173,10 +173,10 @@ function generateCustomResult(answers) {
     const personality = answers.question6 || 'confident';
     const colors = answers.question7 || 'neutrals';
     
-    // Generar resultado personalizado
+    // Generate personalized result
     return {
-        title: `Estilo ${getStyleName(style, personality)}`,
-        description: `Tu estilo ideal combina ${getStyleDescription(style, personality, age)}. Perfecto para tu tipo de rostro ${faceType} y personalidad ${personality}.`,
+        title: `${getStyleName(style, personality)} Style`,
+        description: getStyleDescription(style, personality, age, faceType),
         score: `${getScore(style, personality)}% ${getStyleCategory(style)}`,
         traits: getTraits(personality, style),
         hair: getHairRecommendations(faceType, hairType, style),
@@ -188,19 +188,52 @@ function generateCustomResult(answers) {
 
 function getStyleName(style, personality) {
     const combinations = {
-        'casual-confident': 'Casual Confiado',
-        'formal-professional': 'Profesional Elegante',
-        'streetwear-adventurous': 'Urbano Aventurero',
-        'minimalist-calm': 'Minimalista Sereno',
-        'vintage-creative': 'Vintage Creativo',
-        'sporty-energetic': 'Deportivo Energético'
+        'casual-confident': 'Casual Confident',
+        'formal-professional': 'Professional Elegant',
+        'streetwear-adventurous': 'Urban Adventurous',
+        'minimalist-calm': 'Minimalist Serene',
+        'vintage-creative': 'Vintage Creative',
+        'sporty-energetic': 'Sporty Energetic'
     };
-    return combinations[`${style}-${personality}`] || 'Personalizado';
+    return combinations[`${style}-${personality}`] || 'Personalized';
 }
 
-function getStyleDescription(style, personality, age) {
-    const ageGroup = age.includes('18-25') ? 'juvenil' : age.includes('26-35') ? 'maduro' : 'experimentado';
-    return `${style} con toques ${personality} perfecto para tu etapa ${ageGroup}`;
+function getStyleDescription(style, personality, age, faceType) {
+    const styleMap = {
+        'casual': 'casual',
+        'formal': 'formal',
+        'streetwear': 'streetwear',
+        'minimalist': 'minimalist',
+        'vintage': 'vintage',
+        'sporty': 'sporty'
+    };
+    const personalityMap = {
+        'confident': 'confident',
+        'creative': 'creative',
+        'professional': 'professional',
+        'adventurous': 'adventurous',
+        'calm': 'calm',
+        'energetic': 'energetic'
+    };
+    const ageGroup = age.includes('18-25') ? 'youthful' : age.includes('26-35') ? 'mature' : 'experienced';
+    const styleName = styleMap[style] || style;
+    const personalityName = personalityMap[personality] || personality;
+    const faceTypeName = getFaceTypeName(faceType);
+    return `Your ideal style combines ${styleName} with ${personalityName} touches perfect for your ${ageGroup} stage. Perfect for your ${faceTypeName} face type and ${personalityName} personality.`;
+}
+
+function getFaceTypeName(faceType) {
+    const faceTypeMap = {
+        'oval': 'oval',
+        'square': 'square',
+        'round': 'round',
+        'heart': 'heart',
+        'diamond': 'diamond',
+        'oblong': 'oblong',
+        'triangle': 'triangular',
+        'pear': 'pear'
+    };
+    return faceTypeMap[faceType] || faceType;
 }
 
 function getScore(style, personality) {
@@ -213,50 +246,50 @@ function getScore(style, personality) {
 function getStyleCategory(style) {
     const categories = {
         'casual': 'Casual',
-        'formal': 'Profesional',
-        'streetwear': 'Urbano',
-        'minimalist': 'Minimalista',
+        'formal': 'Professional',
+        'streetwear': 'Urban',
+        'minimalist': 'Minimalist',
         'vintage': 'Vintage',
-        'sporty': 'Deportivo'
+        'sporty': 'Sporty'
     };
-    return categories[style] || 'Personalizado';
+    return categories[style] || 'Personalized';
 }
 
 function getTraits(personality, style) {
     const traitMap = {
-        'confident': [{ icon: "💪", name: "Seguro" }, { icon: "👑", name: "Líder" }, { icon: "🎯", name: "Decidido" }, { icon: "⭐", name: "Destacado" }],
-        'creative': [{ icon: "🎨", name: "Creativo" }, { icon: "💡", name: "Innovador" }, { icon: "🌈", name: "Artístico" }, { icon: "✨", name: "Inspirador" }],
-        'professional': [{ icon: "💼", name: "Profesional" }, { icon: "📊", name: "Organizado" }, { icon: "🎖️", name: "Confiable" }, { icon: "👔", name: "Elegante" }],
-        'adventurous': [{ icon: "🚀", name: "Aventurero" }, { icon: "🗺️", name: "Explorador" }, { icon: "⚡", name: "Dinámico" }, { icon: "🌟", name: "Único" }],
-        'calm': [{ icon: "🧘", name: "Tranquilo" }, { icon: "🌿", name: "Sereno" }, { icon: "💙", name: "Relajado" }, { icon: "🌸", name: "Armonioso" }],
-        'energetic': [{ icon: "⚡", name: "Energético" }, { icon: "🔥", name: "Vibrante" }, { icon: "💥", name: "Intenso" }, { icon: "🚀", name: "Activo" }]
+        'confident': [{ icon: "💪", name: "Confident" }, { icon: "👑", name: "Leader" }, { icon: "🎯", name: "Decisive" }, { icon: "⭐", name: "Outstanding" }],
+        'creative': [{ icon: "🎨", name: "Creative" }, { icon: "💡", name: "Innovative" }, { icon: "🌈", name: "Artistic" }, { icon: "✨", name: "Inspiring" }],
+        'professional': [{ icon: "💼", name: "Professional" }, { icon: "📊", name: "Organized" }, { icon: "🎖️", name: "Reliable" }, { icon: "👔", name: "Elegant" }],
+        'adventurous': [{ icon: "🚀", name: "Adventurous" }, { icon: "🗺️", name: "Explorer" }, { icon: "⚡", name: "Dynamic" }, { icon: "🌟", name: "Unique" }],
+        'calm': [{ icon: "🧘", name: "Calm" }, { icon: "🌿", name: "Serene" }, { icon: "💙", name: "Relaxed" }, { icon: "🌸", name: "Harmonious" }],
+        'energetic': [{ icon: "⚡", name: "Energetic" }, { icon: "🔥", name: "Vibrant" }, { icon: "💥", name: "Intense" }, { icon: "🚀", name: "Active" }]
     };
     return traitMap[personality] || traitMap['confident'];
 }
 
 function getHairRecommendations(faceType, hairType, style) {
     const recommendations = {
-        'oval': ['Corte fade moderno', 'Undercut elegante', 'Pompadour clásico'],
-        'square': ['Corte texturizado', 'Raya lateral', 'Quiff profesional'],
-        'round': ['Fade alto', 'Slick back', 'Barrido lateral'],
-        'heart': ['Corte balanceado', 'Volumen superior', 'Fade sutil'],
-        'diamond': ['Corte que suavice pómulos', 'Volumen en sienes', 'Estilo equilibrado'],
-        'oblong': ['Corte que acorte rostro', 'Volumen lateral', 'Fade bajo'],
-        'triangle': ['Corte que ensanche frente', 'Volumen superior', 'Estilo balanceado'],
-        'pear': ['Corte que ensanche frente', 'Volumen en coronilla', 'Fade alto']
+        'oval': ['Modern fade cut', 'Elegant undercut', 'Classic pompadour'],
+        'square': ['Textured cut', 'Side part', 'Professional quiff'],
+        'round': ['High fade', 'Slick back', 'Side sweep'],
+        'heart': ['Balanced cut', 'Top volume', 'Subtle fade'],
+        'diamond': ['Cut that softens cheekbones', 'Volume at temples', 'Balanced style'],
+        'oblong': ['Cut that shortens face', 'Lateral volume', 'Low fade'],
+        'triangle': ['Cut that widens forehead', 'Top volume', 'Balanced style'],
+        'pear': ['Cut that widens forehead', 'Crown volume', 'High fade']
     };
     return recommendations[faceType] || recommendations['oval'];
 }
 
 function getBeardRecommendations(faceType, beard, style) {
     const recommendations = {
-        'clean': ['Sin barba', 'Líneas muy limpias', 'Afeitado perfecto'],
-        'stubble': ['Barba de 3 días', 'Estilo desenfadado', 'Líneas naturales'],
-        'short': ['Barba corta definida', 'Líneas precisas', 'Mantenimiento regular'],
-        'medium': ['Barba media equilibrada', 'Forma definida', 'Cuidado diario'],
-        'long': ['Barba larga cuidada', 'Aceites nutritivos', 'Cepillado regular'],
-        'goatee': ['Candado clásico', 'Líneas definidas', 'Mantenimiento preciso'],
-        'mustache': ['Bigote bien cuidado', 'Forma definida', 'Estilo clásico']
+        'clean': ['Clean shaven', 'Very clean lines', 'Perfect shave'],
+        'stubble': ['3-day stubble', 'Relaxed style', 'Natural lines'],
+        'short': ['Defined short beard', 'Precise lines', 'Regular maintenance'],
+        'medium': ['Balanced medium beard', 'Defined shape', 'Daily care'],
+        'long': ['Well-maintained long beard', 'Nourishing oils', 'Regular brushing'],
+        'goatee': ['Classic goatee', 'Defined lines', 'Precise maintenance'],
+        'mustache': ['Well-groomed mustache', 'Defined shape', 'Classic style']
     };
     return recommendations[beard] || recommendations['clean'];
 }
@@ -275,20 +308,67 @@ function getColorPalette(skinTone, colors) {
 
 function getFashionRecommendations(style, age, personality) {
     const recommendations = {
-        'casual': ['Jeans slim fit', 'Camisetas básicas de calidad', 'Sneakers blancos', 'Chaquetas ligeras'],
-        'formal': ['Trajes bien cortados', 'Camisas de vestir', 'Corbatas de seda', 'Zapatos de cuero'],
-        'streetwear': ['Hoodies oversize', 'Joggers', 'Sneakers llamativos', 'Accesorios urbanos'],
-        'minimalist': ['Ropa de corte perfecto', 'Colores neutros', 'Materiales naturales', 'Accesorios funcionales'],
-        'vintage': ['Piezas retro', 'Colores clásicos', 'Accesorios únicos', 'Estilo atemporal'],
-        'sporty': ['Ropa técnica', 'Colores vibrantes', 'Zapatillas deportivas', 'Accesorios funcionales']
+        'casual': ['Slim fit jeans', 'Quality basic t-shirts', 'White sneakers', 'Light jackets'],
+        'formal': ['Well-tailored suits', 'Dress shirts', 'Silk ties', 'Leather shoes'],
+        'streetwear': ['Oversized hoodies', 'Joggers', 'Bold sneakers', 'Urban accessories'],
+        'minimalist': ['Perfectly cut clothing', 'Neutral colors', 'Natural materials', 'Functional accessories'],
+        'vintage': ['Retro pieces', 'Classic colors', 'Unique accessories', 'Timeless style'],
+        'sporty': ['Technical clothing', 'Vibrant colors', 'Sports sneakers', 'Functional accessories']
     };
     return recommendations[style] || recommendations['casual'];
 }
 
 // Inicialización cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
+    initializeLoadingScreen();
     initializeApp();
 });
+
+// Función para inicializar la pantalla de carga
+function initializeLoadingScreen() {
+    const loadingScreen = document.getElementById('loading-screen');
+    const progressBar = document.getElementById('loading-progress');
+    
+    if (!loadingScreen) return;
+    
+    // Simular progreso de carga
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 15;
+        if (progress > 100) progress = 100;
+        
+        if (progressBar) {
+            progressBar.style.width = progress + '%';
+        }
+        
+        if (progress >= 100) {
+            clearInterval(interval);
+            // Esperar un momento antes de ocultar
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                // Remover del DOM después de la animación
+                setTimeout(() => {
+                    if (loadingScreen.parentNode) {
+                        loadingScreen.parentNode.removeChild(loadingScreen);
+                    }
+                }, 500);
+            }, 300);
+        }
+    }, 100);
+    
+    // Fallback: ocultar después de 3 segundos máximo
+    setTimeout(() => {
+        if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
+            if (progressBar) progressBar.style.width = '100%';
+            loadingScreen.classList.add('hidden');
+            setTimeout(() => {
+                if (loadingScreen.parentNode) {
+                    loadingScreen.parentNode.removeChild(loadingScreen);
+                }
+            }, 500);
+        }
+    }, 3000);
+}
 
 // Función principal de inicialización
 function initializeApp() {
@@ -300,6 +380,7 @@ function initializeApp() {
     initializeSmoothScroll();
     initializeMobileMenu();
     initializeProductRecommendations();
+    initializeNumberAnimation();
     
     // Inicializar AOS (Animate On Scroll)
     if (typeof AOS !== 'undefined') {
@@ -432,7 +513,7 @@ function initializeQuiz() {
         `;
         
         progressFill.style.width = `${progress}%`;
-        progressText.textContent = `Pregunta ${currentQuizQuestion + 1} de ${quizData.length}`;
+        progressText.textContent = `Question ${currentQuizQuestion + 1} of ${quizData.length}`;
         
         // Event listeners para las opciones
         document.querySelectorAll('.option-btn').forEach(btn => {
@@ -475,11 +556,6 @@ function initializeQuiz() {
         // Actualizar contenido principal
         document.getElementById('result-title').textContent = result.title;
         document.getElementById('result-description').textContent = result.description;
-        
-        // Actualizar avatar
-        const avatar = document.getElementById('style-avatar');
-        const styleIcon = getStyleIcon(result.title);
-        avatar.innerHTML = styleIcon;
         
         // Actualizar traits
         const traitsGrid = document.getElementById('traits-grid');
@@ -609,6 +685,90 @@ function initializeMobileMenu() {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
         });
+    });
+}
+
+// Animación de números al hacer scroll
+function initializeNumberAnimation() {
+    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+    
+    if (statNumbers.length === 0) return;
+    
+    // Función de easing para animación suave
+    function easeOutQuart(t) {
+        return 1 - Math.pow(1 - t, 4);
+    }
+    
+    // Función para animar un número
+    function animateNumber(element, target, suffix = '') {
+        const duration = 2000; // 2 segundos
+        const startTime = Date.now();
+        const start = 0;
+        
+        // Inicializar el número en 0
+        if (suffix === '%') {
+            element.textContent = `+0${suffix}`;
+        } else {
+            element.textContent = `0${suffix}`;
+        }
+        
+        function update() {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeOutQuart(progress);
+            const current = Math.floor(start + (target - start) * eased);
+            
+            // Formatear el número según el sufijo
+            if (suffix === '%') {
+                element.textContent = `+${current}${suffix}`;
+            } else {
+                element.textContent = `${current}${suffix}`;
+            }
+            
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                // Asegurar el valor final
+                if (suffix === '%') {
+                    element.textContent = `+${target}${suffix}`;
+                } else {
+                    element.textContent = `${target}${suffix}`;
+                }
+            }
+        }
+        
+        requestAnimationFrame(update);
+    }
+    
+    // Observer para detectar cuando la sección es visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                const target = parseInt(element.getAttribute('data-target'));
+                const suffix = element.getAttribute('data-suffix') || '';
+                
+                // Solo animar si no se ha animado antes
+                if (!element.classList.contains('animated')) {
+                    element.classList.add('animated');
+                    // Pequeño delay para mejor efecto visual
+                    setTimeout(() => {
+                        animateNumber(element, target, suffix);
+                    }, 200);
+                }
+                
+                // Dejar de observar después de animar
+                observer.unobserve(element);
+            }
+        });
+    }, {
+        threshold: 0.3, // Cuando el 30% del elemento es visible
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    // Observar cada número
+    statNumbers.forEach(stat => {
+        observer.observe(stat);
     });
 }
 
@@ -1010,3 +1170,161 @@ function shareOnSocial(platform, url = window.location.href, text = 'MenStyle360
 
 // Exportar función de compartir
 window.shareOnSocial = shareOnSocial;
+
+// Modal para imágenes ampliadas de cortes, barbas y facial care
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const modalClose = document.getElementById('modalClose');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const cutImages = document.querySelectorAll('.cut-visual');
+    const beardImages = document.querySelectorAll('.beard-visual');
+    const stepIcons = document.querySelectorAll('.step-icon');
+    const guideImages = document.querySelectorAll('.guide-image');
+
+    // Función para abrir el modal
+    function openModal(imgSrc, imgAlt) {
+        modalImage.src = imgSrc;
+        modalCaption.textContent = imgAlt;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+    }
+
+    // Función para cerrar el modal
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restaurar scroll del body
+    }
+
+    // Agregar event listeners a todas las imágenes de cortes
+    cutImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.preventDefault();
+            const imgSrc = img.src;
+            const imgAlt = img.alt || 'Corte de cabello';
+            openModal(imgSrc, imgAlt);
+        });
+    });
+
+    // Agregar event listeners a todas las imágenes de barbas
+    beardImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.preventDefault();
+            const imgSrc = img.src;
+            const imgAlt = img.alt || 'Estilo de barba';
+            openModal(imgSrc, imgAlt);
+        });
+    });
+
+    // Agregar event listeners a todas las imágenes de facial care
+    stepIcons.forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.preventDefault();
+            const imgSrc = img.src;
+            const imgAlt = img.alt || 'Cuidado facial';
+            openModal(imgSrc, imgAlt);
+        });
+    });
+
+    // Agregar event listeners a todas las imágenes de style guides
+    guideImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.preventDefault();
+            const imgSrc = img.src;
+            const imgAlt = img.alt || 'Guía de estilo';
+            openModal(imgSrc, imgAlt);
+        });
+    });
+
+    // Cerrar modal al hacer clic en el botón de cerrar
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+
+    // Cerrar modal al hacer clic en el overlay
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', closeModal);
+    }
+
+    // Cerrar modal con la tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+});
+
+// Función para obtener el primer nombre del email
+function getFirstNameFromEmail(email) {
+    if (!email) return 'Usuario';
+    const namePart = email.split('@')[0];
+    // Capitalizar la primera letra
+    return namePart.charAt(0).toUpperCase() + namePart.slice(1);
+}
+
+// Verificar estado de autenticación y actualizar header
+function checkAuthAndUpdateHeader() {
+    // Esperar a que Firebase esté disponible
+    if (typeof window.onAuthStateChanged === 'undefined') {
+        // Intentar de nuevo después de un breve delay
+        setTimeout(checkAuthAndUpdateHeader, 500);
+        return;
+    }
+
+    const userProfile = document.getElementById('user-profile');
+    const loginBtn = document.getElementById('login-btn');
+    const userName = document.getElementById('user-name');
+    const logoutBtn = document.getElementById('logout-btn');
+
+    window.onAuthStateChanged(window.auth, (user) => {
+        const dashboardBtn = document.getElementById('dashboard-btn');
+        
+        if (user) {
+            // Usuario está logueado
+            const firstName = getFirstNameFromEmail(user.email);
+            userName.textContent = `Hello ${firstName}`;
+            
+            if (userProfile) userProfile.style.display = 'flex';
+            if (loginBtn) loginBtn.classList.add('hidden');
+            if (dashboardBtn) dashboardBtn.style.display = 'inline-block';
+        } else {
+            // Usuario no está logueado
+            if (userProfile) userProfile.style.display = 'none';
+            if (loginBtn) loginBtn.classList.remove('hidden');
+            if (dashboardBtn) dashboardBtn.style.display = 'none';
+        }
+    });
+
+    // Manejar logout
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', async () => {
+            try {
+                if (typeof window.signOut === 'function') {
+                    await window.signOut();
+                    // Redirigir a home después de cerrar sesión
+                    window.location.href = 'index.html';
+                } else {
+                    console.error('signOut function not available');
+                }
+            } catch (error) {
+                console.error('Error al cerrar sesión:', error);
+            }
+        });
+    }
+}
+
+// Inicializar verificación de autenticación cuando la página carga
+document.addEventListener('DOMContentLoaded', () => {
+    // Esperar a que Firebase esté listo
+    if (typeof window.onAuthStateChanged !== 'undefined') {
+        checkAuthAndUpdateHeader();
+    } else {
+        // Escuchar el evento de Firebase listo
+        window.addEventListener('firebaseReady', () => {
+            checkAuthAndUpdateHeader();
+        });
+        // También intentar después de un delay por si acaso
+        setTimeout(checkAuthAndUpdateHeader, 1000);
+    }
+});

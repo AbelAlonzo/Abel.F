@@ -1,21 +1,46 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MenStyle360 - Modern Male Care and Style</title>
+    <title>MenStyle - Modern Male Care and Style</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <h1>MenStyle</h1>
+            </div>
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <div class="loading-text">
+                <span class="loading-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar-fill" id="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header" id="header">
         <nav class="nav">
             <div class="nav-container">
                 <div class="logo">
-                    <h1>MenStyle<span class="logo-accent">360</span></h1>
+                    <h1>MenStyle</h1>
                 </div>
                 <ul class="nav-menu" id="nav-menu">
                     <li class="nav-item">
@@ -31,9 +56,6 @@
                         <a href="#fashion" class="nav-link">Fashion</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#products" class="nav-link">Products</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="#lifestyle" class="nav-link">Lifestyle</a>
                     </li>
                     <li class="nav-item">
@@ -46,7 +68,21 @@
                     <span class="bar"></span>
                 </div>
                 <div class="nav-actions">
-                    <a href="login.html" class="login-btn">
+                    <div id="user-profile" class="user-profile" style="display: none;">
+                        <div class="user-info">
+                            <i class="fas fa-user-circle"></i>
+                            <span class="user-name" id="user-name">User</span>
+                        </div>
+                        <div class="user-menu" id="user-menu">
+                            <a href="dashboard.html" class="user-menu-item">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                            <button class="user-menu-item" id="logout-btn">
+                                <i class="fas fa-sign-out-alt"></i> Sign Out
+                            </button>
+                        </div>
+                    </div>
+                    <a href="login.html" class="login-btn" id="login-btn">
                         <i class="fas fa-user"></i>
                         Sign In
                     </a>
@@ -74,18 +110,21 @@
                 <div class="hero-buttons">
                     <a href="#hair" class="btn btn-primary">Explore Style</a>
                     <a href="#quiz" class="btn btn-secondary">Style Quiz</a>
+                    <a href="dashboard.html" class="btn btn-dashboard" id="dashboard-btn" style="display: none;">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
                 </div>
             </div>
             <div class="hero-image" data-aos="fade-left">
                 <div class="image-carousel">
                     <div class="carousel-item active">
-                        <img src="img/car1.1.jpg" alt="Estilo Masculino Moderno - Cabello" class="carousel-image">
+                        <img src="imghomepage/1.1.1.jpeg" alt="Modern Male Style - Hair" class="carousel-image">
                     </div>
                     <div class="carousel-item">
-                        <img src="img/car 2.jpg" alt="Cuidado Personal Masculino - Barba" class="carousel-image">
+                        <img src="imghomepage/N2.jpeg" alt="Men's Personal Care - Beard" class="carousel-image">
                     </div>
                     <div class="carousel-item">
-                        <img src="img/car3.jpg" alt="Moda Masculina - Estilo" class="carousel-image">
+                        <img src="imghomepage/N3.jpeg" alt="Men's Fashion - Style" class="carousel-image">
                     </div>
                 </div>
                 <div class="carousel-indicators">
@@ -97,19 +136,89 @@
         </div>
     </section>
 
+    <!-- Importance Section -->
+    <section class="section importance-section" id="importance">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Why is men's care important?</h2>
+                <p class="section-subtitle">Comprehensive men's care encompasses health, image, and emotional well-being. It's not vanity: it's an investment in your quality of life.</p>
+            </div>
+
+            <div class="importance-grid" data-aos="fade-up">
+                <div class="importance-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h4>Skin Health</h4>
+                    <p>Simple routines prevent acne, shaving irritation, and premature aging.</p>
+                </div>
+                <div class="importance-card">
+                    <i class="fas fa-cut"></i>
+                    <h4>Hair and Beard</h4>
+                    <p>A good cut and care reinforce your style and daily hygiene.</p>
+                </div>
+                <div class="importance-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h4>Confidence and Security</h4>
+                    <p>Looking good boosts your self-esteem and how you present yourself to others.</p>
+                </div>
+                <div class="importance-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>Professional Image</h4>
+                    <p>A well-groomed presence communicates discipline, attention to detail, and professionalism.</p>
+                </div>
+                <div class="importance-card">
+                    <i class="fas fa-spa"></i>
+                    <h4>Overall Well-being</h4>
+                    <p>Healthy habits impact sleep, stress, and daily energy.</p>
+                </div>
+                <div class="importance-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Prevention</h4>
+                    <p>Early detection of skin problems, hair loss, or sensitivity.</p>
+                </div>
+                <div class="importance-card">
+                    <i class="fas fa-smile"></i>
+                    <h4>Self-esteem</h4>
+                    <p>Feeling good about yourself improves your attitude and personal relationships.</p>
+                </div>
+                <div class="importance-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>Daily Routine</h4>
+                    <p>Establishing care habits creates discipline and organization in your life.</p>
+                </div>
+            </div>
+
+            <div class="importance-stats" data-aos="fade-up">
+                <div class="stat">
+                    <span class="stat-number" data-target="70" data-suffix="%">+0%</span>
+                    <span class="stat-label">Feel more confident with basic routine</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="10" data-suffix=" min">0 min</span>
+                    <span class="stat-label">Enough for effective daily care</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="3" data-suffix=" pillars">0 pillars</span>
+                    <span class="stat-label">Skin, hair/beard and style</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Hair Section -->
     <section class="section hair-section" id="hair">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">💇‍♂️ Hair</h2>
+                <h2 class="section-title"> Hair</h2>
                 <p class="section-subtitle">Find the perfect cut for your face and hair type</p>
             </div>
 
-            <!-- Tipos de Cabello - Layout en Zigzag -->
+            <!-- Hair Types - Zigzag Layout -->
             <div class="hair-types-zigzag" data-aos="fade-up">
                 <div class="zigzag-item">
                     <div class="zigzag-content">
-                        <div class="type-icon-large">🌊</div>
+                        <div class="type-icon-large">
+                            <img src="img/liso.png" alt="Straight Hair" class="hair-type-image">
+                        </div>
                         <div class="type-info">
                             <h3>Straight Hair</h3>
                             <p>Smooth and straight hair that requires light products and special care to maintain its natural shine.</p>
@@ -132,12 +241,16 @@
                                 <li>Defining creams</li>
                             </ul>
                         </div>
-                        <div class="type-icon-large">🌀</div>
+                        <div class="type-icon-large">
+                            <img src="img/rizado.png" alt="Curly Hair" class="hair-type-image">
+                        </div>
                     </div>
                 </div>
                 <div class="zigzag-item">
                     <div class="zigzag-content">
-                        <div class="type-icon-large">💧</div>
+                        <div class="type-icon-large">
+                            <img src="img/graso.png" alt="Oily Hair" class="hair-type-image">
+                        </div>
                         <div class="type-info">
                             <h3>Oily Hair</h3>
                             <p>Requires deep cleansing and mattifying products to control excess sebum.</p>
@@ -160,82 +273,34 @@
                                 <li>Zone treatments</li>
                             </ul>
                         </div>
-                        <div class="type-icon-large">🌿</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tipos de Rostro - Layout Circular -->
-            <div class="face-shapes-circular" data-aos="fade-up">
-                <h3>Face Types</h3>
-                <div class="faces-container">
-                    <div class="face-center">
-                        <div class="face-info">
-                            <h4>Find Your Type</h4>
-                            <p>Identify your face shape to choose the perfect cut</p>
-                        </div>
-                    </div>
-                    <div class="face-options">
-                        <div class="face-option" data-face="oval">
-                            <div class="face-visual oval"></div>
-                            <h4>Oval</h4>
-                            <p>Balanced proportions</p>
-                        </div>
-                        <div class="face-option" data-face="square">
-                            <div class="face-visual square"></div>
-                            <h4>Square</h4>
-                            <p>Prominent jaw</p>
-                        </div>
-                        <div class="face-option" data-face="round">
-                            <div class="face-visual round"></div>
-                            <h4>Round</h4>
-                            <p>Soft lines</p>
-                        </div>
-                        <div class="face-option" data-face="heart">
-                            <div class="face-visual heart"></div>
-                            <h4>Heart</h4>
-                            <p>Wide forehead</p>
-                        </div>
-                        <div class="face-option" data-face="diamond">
-                            <div class="face-visual diamond"></div>
-                            <h4>Diamond</h4>
-                            <p>Prominent cheekbones</p>
-                        </div>
-                        <div class="face-option" data-face="oblong">
-                            <div class="face-visual oblong"></div>
-                            <h4>Oblong</h4>
-                            <p>Longer than wide</p>
-                        </div>
-                        <div class="face-option" data-face="triangle">
-                            <div class="face-visual triangle"></div>
-                            <h4>Triangular</h4>
-                            <p>Wider base</p>
-                        </div>
-                        <div class="face-option" data-face="pear">
-                            <div class="face-visual pear"></div>
-                            <h4>Pear</h4>
-                            <p>Wider jaw</p>
+                        <div class="type-icon-large">
+                            <img src="img/mixto.png" alt="Mixed Hair" class="hair-type-image">
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Recomendaciones por Tipo de Rostro -->
+            <div class="face-recommendations-header" data-aos="fade-up">
+                <h3 class="face-recommendations-title">Face Types</h3>
+                <p class="face-recommendations-subtitle">Discover the perfect haircut recommendations for your face shape</p>
+            </div>
+            
             <div class="face-recommendations" data-aos="fade-up">
                 <div class="recommendation-card" data-face-type="oval">
                     <h4>Oval Face</h4>
                     <div class="recommendation-content">
                         <div class="cuts-grid">
                             <div class="cut-option">
-                                <div class="cut-visual fade"></div>
+                                <img src="img-corte/fade.webp" alt="Fade" class="cut-visual">
                                 <span>Fade</span>
                             </div>
                             <div class="cut-option">
-                                <div class="cut-visual undercut"></div>
+                                <img src="img-corte/under.jpg" alt="Undercut" class="cut-visual">
                                 <span>Undercut</span>
                             </div>
                             <div class="cut-option">
-                                <div class="cut-visual pompadour"></div>
+                                <img src="img-corte/pompadour1.webp" alt="Pompadour" class="cut-visual">
                                 <span>Pompadour</span>
                             </div>
                         </div>
@@ -247,15 +312,15 @@
                     <div class="recommendation-content">
                         <div class="cuts-grid">
                             <div class="cut-option">
-                                <div class="cut-visual textured"></div>
+                                <img src="img-corte/textu.jpg" alt="Texturizado" class="cut-visual">
                                 <span>Texturizado</span>
                             </div>
                             <div class="cut-option">
-                                <div class="cut-visual side-part"></div>
+                                <img src="img-corte/rayalaterla.jpg" alt="Raya Lateral" class="cut-visual">
                                 <span>Raya Lateral</span>
                             </div>
                             <div class="cut-option">
-                                <div class="cut-visual quiff"></div>
+                                <img src="img-corte/quiff.webp" alt="Quiff" class="cut-visual">
                                 <span>Quiff</span>
                             </div>
                         </div>
@@ -267,15 +332,15 @@
                     <div class="recommendation-content">
                         <div class="cuts-grid">
                             <div class="cut-option">
-                                <div class="cut-visual high-fade"></div>
+                                <img src="img-corte/fadealto.jpg" alt="Fade Alto" class="cut-visual">
                                 <span>Fade Alto</span>
                             </div>
                             <div class="cut-option">
-                                <div class="cut-visual slick-back"></div>
+                                <img src="img-corte/slickback.webp" alt="Slick Back" class="cut-visual">
                                 <span>Slick Back</span>
                             </div>
                             <div class="cut-option">
-                                <div class="cut-visual side-swept"></div>
+                                <img src="img-corte/barrido.jpg" alt="Barrido Lateral" class="cut-visual">
                                 <span>Barrido Lateral</span>
                             </div>
                         </div>
@@ -284,7 +349,7 @@
                 </div>
             </div>
 
-            <!-- Rutina de Cuidado - Timeline -->
+            <!-- Care Routine - Timeline -->
             <div class="hair-routine-timeline" data-aos="fade-up">
                 <h3>Weekly Care Routine</h3>
                 <div class="timeline">
@@ -295,7 +360,7 @@
                             <p>Wash your hair with purifying shampoo and apply hydrating mask</p>
                             <div class="timeline-products">
                                 <span class="product-tag">Shampoo</span>
-                                <span class="product-tag">Mascarilla</span>
+                                <span class="product-tag">Mask</span>
                             </div>
                         </div>
                     </div>
@@ -305,8 +370,8 @@
                             <h4>Wednesday - Maintenance</h4>
                             <p>Light cleansing and application of styling products</p>
                             <div class="timeline-products">
-                                <span class="product-tag">Acondicionador</span>
-                                <span class="product-tag">Pomada</span>
+                                <span class="product-tag">Conditioner</span>
+                                <span class="product-tag">Pomade</span>
                             </div>
                         </div>
                     </div>
@@ -327,7 +392,7 @@
                             <h4>Sunday - Treatment</h4>
                             <p>Rest day with nourishing oils and special care</p>
                             <div class="timeline-products">
-                                <span class="product-tag">Aceite</span>
+                                <span class="product-tag">Oil</span>
                                 <span class="product-tag">Serum</span>
                             </div>
                         </div>
@@ -341,7 +406,7 @@
     <section class="section" id="beard">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">🧔‍♂️ Beard & Face</h2>
+                <h2 class="section-title"> Beard & Face</h2>
                 <p class="section-subtitle">Master the art of facial care and the perfect beard</p>
             </div>
 
@@ -349,22 +414,22 @@
                 <h3>Beard Styles</h3>
                 <div class="beard-grid">
                     <div class="beard-card">
-                        <div class="beard-visual full-beard"></div>
+                        <img src="imgbar/full.jpg" alt="Full Beard" class="beard-visual">
                         <h4>Full Beard</h4>
                         <p>Ideal for oval and square faces</p>
                     </div>
                     <div class="beard-card">
-                        <div class="beard-visual fade-beard"></div>
+                        <img src="imgbar/fadeee.jpg" alt="Fade" class="beard-visual">
                         <h4>Fade</h4>
                         <p>Perfect for a modern and defined look</p>
                     </div>
                     <div class="beard-card">
-                        <div class="beard-visual van-dyke"></div>
+                        <img src="imgbar/vandyke.webp" alt="Van Dyke" class="beard-visual">
                         <h4>Van Dyke</h4>
                         <p>Elegant and sophisticated for formal occasions</p>
                     </div>
                     <div class="beard-card">
-                        <div class="beard-visual goatee"></div>
+                        <img src="imgbar/goatee.webp" alt="Goatee" class="beard-visual">
                         <h4>Goatee</h4>
                         <p>Minimalist and easy to maintain</p>
                     </div>
@@ -375,22 +440,22 @@
                 <h3>Facial Care Routine</h3>
                 <div class="skincare-steps">
                     <div class="skincare-step">
-                        <div class="step-icon">🧼</div>
+                        <img src="imgfacialcare/cleansing.webp" alt="Cleansing" class="step-icon">
                         <h4>Cleansing</h4>
                         <p>Clean your face morning and night with a gentle cleansing gel</p>
                     </div>
                     <div class="skincare-step">
-                        <div class="step-icon">💧</div>
+                        <img src="imgfacialcare/hydratation.webp" alt="Hydration" class="step-icon">
                         <h4>Hydration</h4>
                         <p>Apply a light moisturizer after cleansing</p>
                     </div>
                     <div class="skincare-step">
-                        <div class="step-icon">☀️</div>
+                        <img src="imgfacialcare/suns.jpg" alt="Sunscreen" class="step-icon">
                         <h4>Sunscreen</h4>
                         <p>Use SPF 30+ daily, even on cloudy days</p>
                     </div>
                     <div class="skincare-step">
-                        <div class="step-icon">🧴</div>
+                        <img src="imgfacialcare/exfolatition.webp" alt="Exfoliation" class="step-icon">
                         <h4>Exfoliation</h4>
                         <p>Exfoliate 2-3 times a week to remove dead cells</p>
                     </div>
@@ -424,7 +489,7 @@
     <section class="section" id="fashion">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">👕 Fashion & Color</h2>
+                <h2 class="section-title"> Fashion & Color</h2>
                 <p class="section-subtitle">Discover your perfect color palette and combine like a professional</p>
             </div>
 
@@ -471,17 +536,17 @@
                 <h3>Style Guides</h3>
                 <div class="guides-grid">
                     <div class="guide-card">
-                        <div class="guide-image casual"></div>
+                        <img src="imgout/casual.jpeg" alt="Casual" class="guide-image">
                         <h4>Casual</h4>
                         <p>Jeans, basic t-shirts, sneakers and light jackets</p>
                     </div>
                     <div class="guide-card">
-                        <div class="guide-image formal"></div>
+                        <img src="imgout/Formal.jpeg" alt="Formal" class="guide-image">
                         <h4>Formal</h4>
                         <p>Suits, shirts, ties and dress shoes</p>
                     </div>
                     <div class="guide-card">
-                        <div class="guide-image streetwear"></div>
+                        <img src="imgout/street.jpeg" alt="Streetwear" class="guide-image">
                         <h4>Streetwear</h4>
                         <p>Hoodies, joggers, sneakers and urban accessories</p>
                     </div>
@@ -511,104 +576,11 @@
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="section" id="products">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">🧴 Recommended Products</h2>
-                <p class="section-subtitle">Essential products for your personal care routine</p>
-            </div>
-
-            <div class="products-grid" data-aos="fade-up">
-                <div class="product-category">
-                    <h3>Hair Care</h3>
-                    <div class="products-list">
-                        <div class="product-item">
-                            <div class="product-icon">🧴</div>
-                            <div class="product-info">
-                                <h4>Shampoo</h4>
-                                <p>Deep cleansing without sulfates</p>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-icon">💧</div>
-                            <div class="product-info">
-                                <h4>Conditioner</h4>
-                                <p>Hydration and softness</p>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-icon">🎯</div>
-                            <div class="product-info">
-                                <h4>Pomade</h4>
-                                <p>Styling and hold</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-category">
-                    <h3>Facial Care</h3>
-                    <div class="products-list">
-                        <div class="product-item">
-                            <div class="product-icon">🧼</div>
-                            <div class="product-info">
-                                <h4>Cleansing Gel</h4>
-                                <p>Daily gentle cleansing</p>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-icon">💧</div>
-                            <div class="product-info">
-                                <h4>Moisturizer</h4>
-                                <p>Light hydration</p>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-icon">☀️</div>
-                            <div class="product-info">
-                                <h4>Sunscreen</h4>
-                                <p>Daily SPF 30+</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-category">
-                    <h3>Beard Care</h3>
-                    <div class="products-list">
-                        <div class="product-item">
-                            <div class="product-icon">🛢️</div>
-                            <div class="product-info">
-                                <h4>Beard Oil</h4>
-                                <p>Nourishment and softness</p>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-icon">🧴</div>
-                            <div class="product-info">
-                                <h4>Beard Shampoo</h4>
-                                <p>Specific cleansing</p>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-icon">✂️</div>
-                            <div class="product-info">
-                                <h4>Trimming Kit</h4>
-                                <p>Professional maintenance</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Lifestyle Section -->
     <section class="section" id="lifestyle">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">🧭 Lifestyle</h2>
+                <h2 class="section-title"> Lifestyle</h2>
                 <p class="section-subtitle">Healthy habits that improve your appearance and confidence</p>
             </div>
 
@@ -641,7 +613,7 @@
     <section class="section quiz-section" id="quiz">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">🎯 Personal Style Quiz</h2>
+                <h2 class="section-title">Personal Style Quiz</h2>
                 <p class="section-subtitle">Discover your ideal style with our complete interactive quiz</p>
             </div>
 
@@ -677,34 +649,29 @@
                         </div>
                     </div>
                     <div class="result-content">
-                        <div class="result-main">
-                            <div class="result-image">
-                                <div class="style-avatar" id="style-avatar"></div>
-                            </div>
-                            <div class="result-text">
-                                <h4 id="result-title"></h4>
-                                <p id="result-description"></p>
-                                <div class="style-traits">
-                                    <h5>Your Style:</h5>
-                                    <div class="traits-grid" id="traits-grid"></div>
-                                </div>
+                        <div class="result-text">
+                            <h4 id="result-title"></h4>
+                            <p id="result-description"></p>
+                            <div class="style-traits">
+                                <h5>Your Style:</h5>
+                                <div class="traits-grid" id="traits-grid"></div>
                             </div>
                         </div>
                         <div class="result-sections">
                             <div class="result-section">
-                                <h5>💇‍♂️ Hair Recommendations</h5>
+                                <h5>Hair Recommendations</h5>
                                 <ul id="hair-recommendations"></ul>
                             </div>
                             <div class="result-section">
-                                <h5>🧔‍♂️ Beard Style</h5>
+                                <h5>Beard Style</h5>
                                 <ul id="beard-recommendations"></ul>
                             </div>
                             <div class="result-section">
-                                <h5>👕 Color Palette</h5>
+                                <h5>Color Palette</h5>
                                 <div class="color-palette-result" id="color-palette-result"></div>
                             </div>
                             <div class="result-section">
-                                <h5>🎨 Dressing Style</h5>
+                                <h5>Dressing Style</h5>
                                 <ul id="fashion-recommendations"></ul>
                             </div>
                         </div>
@@ -722,7 +689,7 @@
     <section class="section" id="blog">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">📰 Blog</h2>
+                <h2 class="section-title">Blog</h2>
                 <p class="section-subtitle">Articles about trends, tips and transformations</p>
             </div>
 
@@ -788,11 +755,10 @@
                         <li><a href="#hair">Hair</a></li>
                         <li><a href="#beard">Beard</a></li>
                         <li><a href="#fashion">Fashion</a></li>
-                        <li><a href="#products">Products</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Recursos</h4>
+                    <h4>Resources</h4>
                     <ul>
                         <li><a href="#lifestyle">Lifestyle</a></li>
                         <li><a href="#blog">Blog</a></li>
@@ -811,7 +777,18 @@
         </div>
     </footer>
 
+    <!-- Modal para imágenes ampliadas -->
+    <div class="image-modal" id="imageModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <img src="" alt="" id="modalImage" class="modal-image">
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="firebase-simple.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -104,12 +104,14 @@ async function handleRegister(e) {
         const userCredential = await window.createUserWithEmailAndPassword(email.trim(), password);
         console.log('User created successfully:', userCredential.user.uid);
         
-        // Actualizar el perfil del usuario con el nombre
+        // Actualizar el perfil del usuario con el nombre (esto actualiza displayName en Auth)
         try {
             await userCredential.user.updateProfile({
-                displayName: name
+                displayName: name.trim()
             });
-            console.log('User display name updated:', name);
+            console.log('User display name updated in Auth:', name);
+            // Recargar el usuario para obtener el displayName actualizado
+            await userCredential.user.reload();
         } catch (updateError) {
             console.warn('Could not update display name:', updateError);
         }
@@ -121,9 +123,14 @@ async function handleRegister(e) {
         } else {
             try {
                 // Guardar información adicional del usuario en Firestore
+                // Asegurarse de que el nombre se guarde correctamente
                 if (typeof window.initializeUserData === 'function') {
-                    await window.initializeUserData(userCredential.user, { name, email: email.trim() });
-                    console.log('User profile created in Firestore');
+                    await window.initializeUserData(userCredential.user, { 
+                        name: name.trim(), 
+                        displayName: name.trim(),
+                        email: email.trim() 
+                    });
+                    console.log('User profile created in Firestore with name:', name);
                 }
                 showToast('success', '¡Cuenta creada!', 'Tu cuenta ha sido creada exitosamente');
             } catch (firestoreError) {

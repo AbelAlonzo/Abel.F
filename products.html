@@ -12,10 +12,11 @@
         .section-header {
             background: linear-gradient(135deg, #2E4A62 0%, #1E1E1E 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 3rem 0 2rem;
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 200px;
         }
         .section-header::before {
             content: '';
@@ -59,6 +60,36 @@
         .back-btn i {
             font-size: 0.9rem;
         }
+        .dashboard-btn {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+        .dashboard-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .dashboard-btn i {
+            font-size: 0.9rem;
+        }
         .user-info {
             position: absolute;
             top: 2rem;
@@ -77,8 +108,9 @@
             margin-right: 0.5rem;
         }
         .section-header-content {
-            margin-left: 8rem;
+            margin-left: 1.5rem;
             text-align: left;
+            padding-top: 1rem;
         }
         .section-title {
             font-size: 3rem;
@@ -92,7 +124,7 @@
             max-width: 600px;
         }
         .content-section {
-            padding: 4rem 0;
+            padding: 2rem 0;
         }
         .container {
             max-width: 1200px;
@@ -215,9 +247,9 @@
             .section-title {
                 font-size: 2rem;
             }
-            .back-btn, .user-info {
+            .dashboard-btn, .user-info {
                 position: static;
-                margin: 1rem;
+                margin: 0.5rem;
                 display: inline-flex;
             }
             .section-header {
@@ -234,9 +266,8 @@
     <!-- Section Header -->
     <div class="section-header">
         <div class="container">
-            <a href="index.html" class="back-btn">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
+            <a href="dashboard.html" class="dashboard-btn" style="left: 1.5rem;">
+                <i class="fas fa-arrow-left"></i>
             </a>
             <div class="user-info" id="userInfo" style="display: none;">
                 <i class="fas fa-user"></i>
@@ -413,25 +444,27 @@
                         const userInfo = document.getElementById('userInfo');
                         const userName = document.getElementById('userName');
                         
-                        // Get user display name
-                        let displayName = 'User';
+                        // Get user display name (full name only)
+                        let displayName = '';
                         
-                        if (user.displayName) {
-                            displayName = user.displayName;
-                        } else if (typeof window.getUserDisplayNameFromFirestore === 'function') {
-                            // Try to get name from Firestore
+                        // Intentar obtener el nombre de Firestore primero
+                        if (typeof window.getUserDisplayNameFromFirestore === 'function') {
                             try {
                                 displayName = await window.getUserDisplayNameFromFirestore(user);
                             } catch (error) {
                                 console.warn('Error getting user name from Firestore:', error);
-                                displayName = user.email ? user.email.split('@')[0] : 'User';
                             }
-                        } else {
-                            displayName = user.email ? user.email.split('@')[0] : 'User';
+                        }
+                        if (!displayName && user.displayName) {
+                            displayName = user.displayName;
                         }
                         
-                        userName.textContent = displayName;
-                        userInfo.style.display = 'block';
+                        if (displayName) {
+                            userName.textContent = displayName;
+                            userInfo.style.display = 'block';
+                        } else {
+                            document.getElementById('userInfo').style.display = 'none';
+                        }
                     } else {
                         // User is signed out
                         document.getElementById('userInfo').style.display = 'none';

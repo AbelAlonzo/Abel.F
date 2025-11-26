@@ -359,14 +359,6 @@
                     <a href="fashion.html" class="action-btn">Explore</a>
                 </div>
 
-                <div class="action-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="action-icon">
-                        <i class="fas fa-shopping-bag"></i>
-                    </div>
-                    <h3 class="action-title">Products</h3>
-                    <p class="action-description">Find the best products for your personal care</p>
-                    <a href="products.html" class="action-btn">Explore</a>
-                </div>
             </div>
 
             <!-- Stats -->
@@ -377,7 +369,7 @@
                     </div>
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="stat-number">8</div>
-                    <div class="stat-label">Favorite Products</div>
+                    <div class="stat-label">Saved Tips</div>
                 </div>
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="stat-number">5</div>
@@ -483,27 +475,43 @@
             document.getElementById('loggedInContent').style.display = 'block';
             document.getElementById('userActions').style.display = 'flex';
             
-            // Get user display name
-            let displayName = 'User';
+            // Get user display name (full name only) - el nombre que llenó en el formulario
+            let displayName = '';
             
-            if (user.displayName) {
-                displayName = user.displayName;
-            } else if (typeof window.getUserDisplayNameFromFirestore === 'function') {
-                // Try to get name from Firestore
+            // Intentar obtener el nombre de Firestore primero (donde se guarda el nombre del formulario)
+            if (typeof window.getUserDisplayNameFromFirestore === 'function') {
                 try {
                     displayName = await window.getUserDisplayNameFromFirestore(user);
-            } catch (error) {
+                    console.log('Nombre obtenido de Firestore:', displayName);
+                } catch (error) {
                     console.warn('Error getting user name from Firestore:', error);
-                    displayName = user.email ? user.email.split('@')[0] : 'User';
                 }
-            } else {
-                displayName = user.email ? user.email.split('@')[0] : 'User';
             }
             
-            // Update welcome message
-            document.getElementById('welcomeTitle').textContent = `Hello, ${displayName}!`;
+            // Si no hay en Firestore, usar displayName de Auth (que se actualiza al registrarse)
+            if (!displayName && user.displayName) {
+                displayName = user.displayName.trim();
+                console.log('Nombre obtenido de Auth:', displayName);
+            }
+            
+            // Update welcome message - mostrar el nombre que llenó en el formulario
+            const titleEl = document.getElementById('welcomeTitle');
+            if (displayName && displayName.trim() !== '') {
+                titleEl.textContent = `Hello, ${displayName}!`;
+            } else {
+                titleEl.textContent = 'Hello!';
+            }
             document.getElementById('welcomeSubtitle').textContent = 'Welcome to your personalized dashboard';
-            document.getElementById('userName').textContent = displayName;
+            
+            const userInfoEl = document.getElementById('userActions');
+            const userNameEl = document.getElementById('userName');
+            if (displayName && displayName.trim() !== '') {
+                userNameEl.textContent = displayName;
+                userInfoEl.style.display = 'flex';
+            } else {
+                // Ocultar chip si no hay nombre definido
+                userInfoEl.style.display = 'none';
+            }
         }
 
         function showLoginPrompt() {

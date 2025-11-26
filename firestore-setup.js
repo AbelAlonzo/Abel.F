@@ -7,8 +7,9 @@ async function createUserProfile(user, additionalData = {}) {
         const userProfile = {
             uid: user.uid,
             email: user.email,
-            displayName: user.displayName || additionalData.name || '',
-            name: additionalData.name || user.displayName || '',
+            // Priorizar el nombre que viene del formulario (additionalData.name)
+            name: additionalData.name ? additionalData.name.trim() : (user.displayName ? user.displayName.trim() : ''),
+            displayName: additionalData.name ? additionalData.name.trim() : (user.displayName ? user.displayName.trim() : ''),
             createdAt: new Date(),
             updatedAt: new Date(),
             // Datos específicos de MenStyle360

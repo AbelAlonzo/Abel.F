@@ -96,31 +96,46 @@ function initializeFirebase() {
             return 'Cargando...';
         }
         
-        // Fallback to email username
-        if (user.email) {
-            return user.email.split('@')[0];
+        // Fallback to displayName or empty (no placeholder)
+        if (user.displayName) {
+            return user.displayName;
         }
         
-        return 'Usuario';
+        return '';
     };
     
     // Function to get user display name from Firestore
     window.getUserDisplayNameFromFirestore = async function(user) {
-        if (!user || typeof window.db === 'undefined') {
-            return user ? (user.displayName || user.email.split('@')[0]) : 'Usuario';
+        if (!user) {
+            return '';
         }
         
-        try {
-            const userDoc = await window.db.collection('users').doc(user.uid).get();
-            if (userDoc.exists) {
-                const userData = userDoc.data();
-                return userData.displayName || userData.name || user.displayName || user.email.split('@')[0];
+        // Si Firestore está disponible, intentar obtener el nombre de ahí
+        if (typeof window.db !== 'undefined' && window.db) {
+            try {
+                const userDoc = await window.db.collection('users').doc(user.uid).get();
+                if (userDoc.exists) {
+                    const userData = userDoc.data();
+                    // Priorizar: name de Firestore > displayName de Firestore > displayName de Auth
+                    if (userData.name && userData.name.trim() !== '') {
+                        return userData.name.trim();
+                    }
+                    if (userData.displayName && userData.displayName.trim() !== '') {
+                        return userData.displayName.trim();
+                    }
+                }
+            } catch (error) {
+                console.warn('Error getting user name from Firestore:', error);
             }
-        } catch (error) {
-            console.warn('Error getting user name from Firestore:', error);
         }
         
-        return user.displayName || user.email.split('@')[0];
+        // Si no se encontró en Firestore, usar displayName de Auth
+        if (user.displayName && user.displayName.trim() !== '') {
+            return user.displayName.trim();
+        }
+        
+        // Si no hay nombre disponible, devolver vacío (no mostrar correo ni placeholder)
+        return '';
     };
     
     console.log('Firebase initialized successfully');

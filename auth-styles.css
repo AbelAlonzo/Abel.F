@@ -6,13 +6,21 @@
 }
 
 :root {
-    /* Paleta de colores MenStyle360 */
-    --ivory-mist: #F5F5F3;
-    --petroleum-blue: #2E4A62;
-    --charcoal-black: #1E1E1E;
-    --sand-beige: #D9CAB3;
+    /* Nueva paleta de colores azul elegante */
+    --blue-lightest: #B0D4E8;
+    --blue-light: #7FB3D3;
+    --blue-navy: #1E3A5F;
+    --blue-dark: #0F2A47;
+    --blue-darkest: #0A1F35;
+    --steel-gray: #4B5563;
     --soft-silver: #C9D1D3;
-    --olive-taupe: #7A7265;
+    --ivory-mist: #F5F5F3;
+    
+    /* Colores legacy para compatibilidad */
+    --petroleum-blue: var(--blue-navy);
+    --charcoal-black: var(--blue-darkest);
+    --sand-beige: var(--blue-light);
+    --olive-taupe: var(--blue-dark);
     
     /* Tipografía */
     --font-primary: 'Inter', sans-serif;
@@ -33,10 +41,42 @@
 body {
     font-family: var(--font-primary);
     background: var(--ivory-mist);
-    color: var(--charcoal-black);
+    color: var(--blue-darkest);
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Modo oscuro para auth */
+[data-theme="dark"] {
+    --blue-lightest: #4A6B7A;
+    --blue-light: #3A5A6A;
+    --blue-navy: #5A8AB0;
+    --blue-dark: #7FB3D3;
+    --blue-darkest: #E8F0F5;
+    --steel-gray: #6B7280;
+    --soft-silver: #5A5A5A;
+    --ivory-mist: #1A1F2E;
+}
+
+[data-theme="dark"] body {
+    background: var(--ivory-mist);
+    color: var(--blue-darkest);
+}
+
+[data-theme="dark"] .auth-card {
+    background: rgba(26, 31, 46, 0.95);
+    border: 1px solid rgba(90, 138, 176, 0.2);
+}
+
+[data-theme="dark"] .auth-btn.primary {
+    background: linear-gradient(135deg, var(--blue-navy), var(--blue-light));
+    color: var(--blue-darkest);
+}
+
+[data-theme="dark"] .auth-btn.primary:hover {
+    background: linear-gradient(135deg, var(--blue-light), var(--blue-navy));
 }
 
 /* Container principal */
@@ -395,7 +435,7 @@ body {
 }
 
 .auth-btn.primary {
-    background: linear-gradient(135deg, var(--petroleum-blue), var(--olive-taupe));
+    background: linear-gradient(135deg, var(--blue-navy), var(--blue-dark));
     color: white;
     box-shadow: var(--shadow-medium);
 }
